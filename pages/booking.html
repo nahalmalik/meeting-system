@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>WordPress Consultation Booking</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+
+  <!-- Header (loaded via JS) -->
+  <div id="header"></div>
+
+  <!-- MAIN WRAPPER -->
+  <main class="booking-wrapper">
+
+    <!-- ================= LEFT SIDE ================= -->
+    <section class="meeting-types">
+      <h3>Select Wordpress Website Consultation Type</h3>
+      <div class="error" id="error-type"></div> <!-- Error placeholder -->
+
+      <div class="card active" data-type="WordPress Site Review" data-duration="30">
+        <h4>WordPress Site Review</h4>
+        <p>Quick review of your website to identify improvements.</p>
+        <span>30 min · Call</span>
+      </div>
+
+      <div class="card" data-type="WordPress SEO Consultation" data-duration="60">
+        <h4>WordPress SEO Consultation</h4>
+        <p>In-depth analysis of your website’s SEO performance.</p>
+        <span>60 min · Call</span>
+      </div>
+
+      <div class="card" data-type="Custom WordPress Strategy" data-duration="90">
+        <h4>Custom WordPress Strategy</h4>
+        <p>Full consultation to plan your website strategy and improvements.</p>
+        <span>90 min · Video / In-Person</span>
+      </div>
+    </section>
+
+    <!-- ================= RIGHT SIDE ================= -->
+    <section class="calendar-section">
+
+      <!-- DATE SELECTION -->
+      <h3>Select a Date</h3>
+      <div class="error" id="error-date"></div>
+      <div class="dates"></div>
+
+      <!-- TIME SELECTION -->
+      <h3 class="time-title hidden">Select a Time</h3>
+      <div class="error" id="error-time"></div>
+      <div class="times hidden"></div>
+
+      <!-- USER INFO -->
+      <h3 class="user-info-title hidden">Your Information</h3>
+      <div class="error" id="error-name"></div>
+      <input type="text" id="userName" class="user-input hidden" placeholder="Your Name" />
+
+      <div class="error" id="error-email"></div>
+      <input type="email" id="userEmail" class="user-input hidden" placeholder="Your Email" />
+
+      <!-- CONFIRMATION -->
+      <div class="confirm-box hidden">
+        <p id="confirmType"></p>
+        <p id="confirmDate"></p>
+        <p id="confirmTime"></p>
+        <p id="confirmUser"></p>
+
+        <button class="confirm-btn">
+          Confirm Booking
+        </button>
+
+        <small>You’ll receive a confirmation email</small>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- JS -->
+  <script src="../assets/js/app.js"></script>
+</body>
+</html>

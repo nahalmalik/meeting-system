@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <div id="header"></div>
+
+  <main class="admin-dashboard">
+
+    <!-- ================= LEFT SIDE NAV ================= -->
+    <aside class="admin-sidebar">
+      <h3>Notifications</h3>
+      <ul id="notificationList">
+        <!-- New bookings will appear here -->
+      </ul>
+    </aside>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <section class="admin-main">
+      <div class="dashboard-header">
+        <h2>Scheduled Meetings</h2>
+        <div class="dashboard-buttons">
+          <a href="booking.html" class="btn">Go to Booking Page</a>
+          <a href="consultation.html" class="btn">Go to Consultation Page</a>
+        </div>
+      </div>
+
+      <!-- Tabs for Week / Month -->
+      <div class="dashboard-tabs">
+        <button class="tab-btn active" data-view="week">Weekly View</button>
+        <button class="tab-btn" data-view="month">Monthly View</button>
+      </div>
+
+      <!-- Table for Meetings -->
+      <table class="meeting-table">
+        <thead>
+          <tr>
+            <th>Meeting Type</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Duration</th>
+          </tr>
+        </thead>
+        <tbody id="meetingList">
+          <!-- Meetings injected by JS -->
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <!-- JS -->
+  <script src="../assets/js/admin.js"></script>
+</body>
+</html>

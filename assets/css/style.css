@@ -1,0 +1,536 @@
+/* ======================= RESET & BASE ======================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', Arial, sans-serif;
+}
+
+body {
+  background: #f8fafc;
+  color: #111827;
+}
+
+/* ======================= HEADER ======================= */
+/* HEADER */
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.top-header .logo {
+  font-weight: 800;
+  font-size: 1.8rem; /* increased size */
+  color: #16a34a;
+}
+
+/* Book button + dropdown container */
+.book-dropdown {
+  position: relative;
+}
+
+/* Button style */
+.top-header .book-btn {
+  background: #16a34a;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.top-header .book-btn:hover {
+  background: #15803d;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+  width: 200px;
+  display: none; /* hidden by default */
+  flex-direction: column;
+  z-index: 1000;
+}
+
+/* Show dropdown on hover */
+.book-dropdown:hover .dropdown-menu {
+  display: flex;
+}
+
+/* Dropdown links */
+.dropdown-menu a {
+  padding: 12px 18px;
+  text-decoration: none;
+  color: #374151;
+  font-weight: 500;
+  text-align: left;
+  transition: background 0.2s, color 0.2s;
+}
+
+.dropdown-menu a:hover {
+  background: #16a34a;
+  color: #fff;
+}
+
+
+/* ======================= MAIN LAYOUT ======================= */
+.booking-wrapper {
+  max-width: 1100px;
+  margin: 50px auto;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 40px;
+  padding: 0 20px;
+}
+
+/* ======================= LEFT PANEL: MEETING TYPES ======================= */
+.meeting-types h3 {
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.card {
+  background: #ffffff;
+  padding: 18px 20px;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.card.active {
+  border-color: #16a34a;
+  background: #f0fdf4;
+}
+
+.card h4 {
+  font-size: 1rem;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.card p {
+  font-size: 0.875rem;
+  margin-bottom: 6px;
+  color: #4b5563;
+}
+
+.card span {
+  font-size: 0.75rem;
+  color: #16a34a;
+  font-weight: 500;
+}
+
+/* ======================= RIGHT PANEL ======================= */
+.calendar-section {
+  background: #ffffff;
+  padding: 25px 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+}
+
+/* Dates */
+.dates {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.dates button {
+  padding: 12px 0;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.dates button.active {
+  background: #dcfce7;
+  border-color: #16a34a;
+}
+
+/* Times */
+.times {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.times button {
+  padding: 10px 0;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.times button.active {
+  background: #dcfce7;
+  border-color: #16a34a;
+}
+
+/* Confirmation Box */
+.confirm-box {
+  background: #f0fdf4;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  margin-top: 20px;
+}
+
+.confirm-box p {
+  margin: 6px 0;
+  font-weight: 500;
+}
+
+.confirm-btn {
+  margin-top: 15px;
+  width: 100%;
+  padding: 14px 0;
+  border: none;
+  border-radius: 12px;
+  background: #16a34a;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.confirm-btn:hover {
+  background: #15803d;
+}
+
+.confirm-box small {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.75rem;
+  color: #4b5563;
+}
+
+/* ======================= HEADER & FOOTER STYLES ======================= */
+.site-footer {
+  background: #ffffff; /* light grey background */
+  color: #374151; /* dark text */
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 50px;
+  font-size: 0.9rem;
+  border-top: 1px solid #e5e7eb;
+  border-radius: 15px 15px 0 0;
+}
+
+.site-footer .footer-content {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.site-footer .footer-logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #16a34a;
+  margin-bottom: 10px;
+}
+
+.site-footer p {
+  margin: 5px 0 15px 0;
+}
+
+.site-footer .footer-links a {
+  margin: 0 10px;
+  color: #16a34a;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.site-footer .footer-links a:hover {
+  color: #15803d;
+}
+
+/* ======================= HIDDEN CLASS ======================= */
+.hidden {
+  display: none !important;
+}
+
+/* ERROR MESSAGES */
+.error {
+  color: #dc2626; /* red */
+  font-size: 0.85rem;
+  margin: 5px 0 10px 0;
+}
+
+/* POPUP NOTIFICATION */
+.popup {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #16a34a;
+  color: #fff;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  font-weight: 500;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.popup.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+.user-input {
+  width: 100%;
+  padding: 12px 14px;
+  margin: 5px 0 15px 0;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 0.95rem;
+}
+
+.user-input:focus {
+  border-color: #16a34a;
+  outline: none;
+}
+
+.error {
+  color: #dc2626;
+  font-size: 0.85rem;
+  margin: 3px 0 8px 0;
+}
+
+/* ======================= RESPONSIVE ======================= */
+@media screen and (max-width: 900px) {
+  .booking-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .dates, .times {
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+  }
+}
+/* admin.css file */
+.admin-dashboard {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.admin-sidebar {
+  width: 250px;
+  background: #f3f4f6;
+  padding: 15px;
+  border-radius: 15px;
+  height: fit-content;
+}
+
+.admin-sidebar h3 {
+  margin-bottom: 15px;
+}
+
+.admin-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.admin-sidebar li {
+  background: #e5e7eb;
+  margin-bottom: 8px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.admin-main {
+  flex: 1;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.dashboard-buttons .btn {
+  background: #16a34a;
+  color: #fff;
+  padding: 8px 15px;
+  margin-left: 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.dashboard-tabs {
+  margin-bottom: 15px;
+}
+
+.tab-btn {
+  padding: 6px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  margin-right: 5px;
+  cursor: pointer;
+  background: #f9fafb;
+}
+
+.tab-btn.active {
+  background: #16a34a;
+  color: #fff;
+  border-color: #16a34a;
+}
+
+.meeting-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.meeting-table th, .meeting-table td {
+  padding: 10px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+}
+
+.meeting-table th {
+  background: #f3f4f6;
+}
+.meeting-table tr:hover {
+  background: #f9fafb;
+}
+.action-btn {
+  background: #ef4444;
+  color: #fff;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+.action-btn.approve {
+  background: #16a34a;
+  margin-right: 5px;
+}
+.action-btn.reject {
+  background: #ef4444;
+}
+.pagination {
+  margin-top: 15px;
+  text-align: center;
+}
+.pagination .page-btn {
+  background: #f3f4f6;
+  border: 1px solid #d1d5db;
+  padding: 6px 10px;
+  margin: 0 3px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.pagination .page-btn.active {
+  background: #16a34a;
+  color: #fff;
+  border-color: #16a34a;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.modal-content {
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+}
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.modal-content h2 {
+  margin-bottom: 20px;
+}
+.modal-content label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+.modal-content input, .modal-content select {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+}
+.modal-content input:focus, .modal-content select:focus {
+  border-color: #16a34a;
+  outline: none;
+}
+.modal-content .submit-btn {
+  background: #16a34a;
+  color: #fff;
+  padding: 12px 0;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.modal-content .submit-btn:hover {
+  background: #15803d;
+}
+@media screen and (max-width: 768px) {
+  .admin-dashboard {
+    flex-direction: column;
+  }
+
+  .admin-sidebar {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+/* admin.css file */
