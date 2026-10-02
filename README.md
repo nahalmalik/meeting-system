@@ -95,7 +95,7 @@ The system helps prevent the need for manual coordination by presenting availabl
 
 ## 🖥️ Interface Preview
 
-<img src="assets/meeting-system.png" width="100%" alt="Meeting System Preview"/>
+<img src="assets/meeting-system.PNG" width="100%" alt="Meeting System Preview"/>
 
 > Replace `assets/meeting-system.png` with the actual filename of the screenshot you upload to the repository.
 
